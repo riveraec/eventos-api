@@ -2,20 +2,9 @@
 
 API **Express** (Node.js) de **ingesta de eventos** (webhooks): valida el JSON con Zod, no duplica por `id`, persiste en SQLite y deja listar/consultar.
 
-Demo de portafolio en **Node** — complementary a [`reportes-api`](https://github.com/riveraec/reportes-api) (Python/FastAPI + ETL). Esta API **no** dispara el ETL ni lee `resumen_diario`.
+Pensada para recibir avisos de otros sistemas (`POST /eventos`), guardar el hecho y consultarlo después (`GET`). El `payload` se almacena tal cual; esta API no interpreta reglas de negocio del evento.
 
 **Autor:** [Efrain Rivera](https://www.linkedin.com/in/riveraec/) · [Portafolio](https://riveraec.github.io/portafolio/)
-
----
-
-## Qué es / qué no es
-
-| Sí | No |
-|----|-----|
-| Recibir avisos (`POST /eventos`) de otro sistema | Ser un CRUD de productos o “reportes-api en Node” |
-| Idempotencia por `id` (mismo evento dos veces → no dos filas) | Cobrar pagos o interpretar el negocio del `payload` |
-| Consultar lo recibido (`GET`) | Llamar a etl-reportes / reportes-api |
-| Tests (SuperTest) + Docker (compose) | Un segundo microservicio: `scripts/emitir-evento.js` es solo un **cliente demo** (como curl) |
 
 ---
 
@@ -106,7 +95,7 @@ node scripts/emitir-evento.js evt-003
 node scripts/emitir-evento.js evt-003
 ```
 
-Es un script cliente HTTP. **No** es otro micro ni otro repo.
+Simula un emisor externo con un `POST` de ejemplo (equivalente a usar curl).
 
 ---
 
