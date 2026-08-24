@@ -1,0 +1,13 @@
+services:
+  eventos-api:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: "3000"
+      DB_PATH: "./data/eventos.db"
+    volumes:
+      - eventos-data:/app/data
+
+volumes:
+  eventos-data:
