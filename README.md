@@ -109,6 +109,14 @@ No hace falta `npm start`. Usan BD temporal.
 npm test
 ```
 
+### CI (GitHub Actions)
+
+En cada push/PR a `main`, Actions corre `npm ci` + `npm test` (workflow [`.github/workflows/ci.yml`](.github/workflows/ci.yml)).
+
+- Runner: Node **22.14** (mismo requisito que `engines` / `better-sqlite3@13`).
+- Historial: https://github.com/riveraec/eventos-api/actions  
+- Badge arriba del README = estado del último run.
+
 ---
 
 ## Docker
@@ -144,6 +152,7 @@ src/
   middleware/error.js
 scripts/emitir-evento.js
 tests/
+.github/workflows/ci.yml
 Dockerfile · docker-compose.yml · .dockerignore
 ```
 
