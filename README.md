@@ -14,7 +14,7 @@ Pensada para recibir avisos de otros sistemas (`POST /eventos`), guardar el hech
 
 | Pieza | Uso |
 |-------|-----|
-| Node.js LTS | Runtime |
+| Node.js ≥ 22.14 (LTS) | Runtime (`better-sqlite3@13`) |
 | Express 5 | HTTP / rutas |
 | Zod | Validación del body |
 | better-sqlite3 | Persistencia local |
@@ -50,7 +50,7 @@ Body de ejemplo:
 
 ## Requisitos
 
-- Node.js LTS (`node --version`, `npm --version`)
+- Node.js **≥ 22.14** (`node --version`, `npm --version`) — `better-sqlite3@13` falla con SIGSEGV en Node 20
 - (Opcional) Docker Desktop + WSL 2 en Windows, para compose
 
 ---

@@ -12,7 +12,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          # better-sqlite3@13 requiere Node-API 10 (≥22.14); en Node 20 pega SIGSEGV
+          node-version: "22.14"
           cache: npm
       - run: npm ci
       - run: npm test
