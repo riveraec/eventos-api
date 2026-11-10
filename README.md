@@ -1,5 +1,7 @@
 # eventos-api
 
+[![CI](https://github.com/riveraec/eventos-api/actions/workflows/ci.yml/badge.svg)](https://github.com/riveraec/eventos-api/actions/workflows/ci.yml)
+
 API **Express** (Node.js) de **ingesta de eventos** (webhooks): valida el JSON con Zod, no duplica por `id`, persiste en SQLite y deja listar/consultar.
 
 Pensada para recibir avisos de otros sistemas (`POST /eventos`), guardar el hecho y consultarlo después (`GET`). El `payload` se almacena tal cual; esta API no interpreta reglas de negocio del evento.
